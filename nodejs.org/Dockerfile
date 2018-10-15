@@ -63,7 +63,7 @@ COPY ./s2i/bin/ $STI_SCRIPTS_PATH
 COPY ./contrib/ /opt/app-root
 
 # Drop the root user and make the content of /opt/app-root owned by user 1001
-RUN chown -R 1001:0 /opt/app-root && yum install open-sans-fonts -y
+RUN chown -R 1001:0 /opt/app-root && yum install curl cabextract xorg-x11-font-utils fontconfig -y
 
 USER 1001
 # Set the default CMD to print the usage of the language image
