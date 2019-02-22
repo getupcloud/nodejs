@@ -66,6 +66,7 @@ COPY ./contrib/ /opt/app-root
 RUN chown -R 1001:0 /opt/app-root && yum install curl cabextract xorg-x11-font-utils fontconfig -y \
     && yum localinstall https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm -y
 
+RUN chmod 777 /opt/app-root -R
 
 USER 1001
 # Set the default CMD to print the usage of the language image
